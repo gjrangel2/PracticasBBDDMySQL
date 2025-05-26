@@ -1,0 +1,8 @@
+SELECT * FROM hello_sql.users ORDER BY name;
+
+SELECT * FROM hello_sql.users ORDER BY age;
+SELECT * FROM hello_sql.users ORDER BY age ASC;
+SELECT * FROM hello_sql.users ORDER BY age DESC;
+
+SELECT * FROM hello_sql.users WHERE age<33 ORDER BY init_date DESC;
+SELECT name FROM hello_sql.users WHERE age<33 ORDER BY init_date DESC;
