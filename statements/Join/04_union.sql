@@ -28,3 +28,14 @@ RIGHT JOIN dni
 ON users.user_id = dni.user_id;
 
 -- UNION ALL mantiene duplicados
+
+
+SELECT users.name AS u_user_name, companies.name AS d_comp_name
+FROM users
+LEFT JOIN companies
+ON users.user_id = companies.company_id
+UNION
+SELECT users.name AS u_user_name, companies.name AS d_comp_name
+FROM users
+RIGHT JOIN companies
+ON users.user_id = companies.company_id

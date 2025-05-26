@@ -4,23 +4,23 @@ Lección 17.1: https://youtu.be/OuJerKzV5T0?t=16101
 */
 
 -- Realiza un JOIN de manera incorrecta, ya que no existe un campo de relación
-SELECT * FROM users
-INNER JOIN dni;
+SELECT * FROM hello_sql.users
+INNER JOIN hello_sql.dni;
 
 -- Obtiene los datos de los usuarios que tienen un dni 
-SELECT * FROM users
-INNER JOIN dni
-ON users.user_id = dni.user_id;
+SELECT * FROM hello_sql.users
+INNER JOIN hello_sql.dni
+ON hello_sql.users.user_id = hello_sql.dni.user_id;
 
 -- Obtiene los datos de los usuarios que tienen un dni (JOIN es lo mismo que INNER JOIN)
-SELECT * FROM users
-JOIN dni
-ON users.user_id = dni.user_id;
+SELECT * FROM hello_sql.users
+JOIN hello_sql.dni
+ON hello_sql.users.user_id = hello_sql.dni.user_id;
 
 -- Obtiene el nombre y el dni de los usuarios que tienen un dni y los ordena por edad
-SELECT name, dni_number FROM users
-JOIN dni
-ON users.user_id = dni.user_id
+SELECT name, dni_number FROM hello_sql.users
+JOIN hello_sql.dni
+ON hello_sql.users.user_id = hello_sql.dni.user_id
 ORDER BY age ASC;
 
 -- Obtiene los datos de los usuarios que tienen empresa
@@ -48,4 +48,9 @@ JOIN languages ON users_languages.language_id=languages.language_id;
 SELECT users.name, languages.name
 FROM users
 JOIN users_languages ON users.user_id=users_languages.user_id
-JOIN languages ON users_languages.language_id=languages.languag
+JOIN languages ON users_languages.language_id=languages.language_id
+
+SELECT users.name, languages.name
+FROM languages
+JOIN users_languages ON users_languages.language_id=languages.language_id
+JOIN users ON users.user_id=users_languages.user_id
