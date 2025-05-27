@@ -10,7 +10,13 @@ SELECT name, age
 FROM users
 WHERE age >= 18;
 
+CREATE VIEW v_languages_users AS
+SELECT name, surname, email
+FROM users
+WHERE company_id = 1;
+
 SELECT * FROM v_adult_users;
+SELECT * FROM v_languages_users;
 
 -- Elimina la vista llamada "v_adult_users"
 DROP VIEW v_adult_users;
